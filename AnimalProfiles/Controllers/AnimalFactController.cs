@@ -55,16 +55,16 @@ public class AnimalFactController : Controller
     };
 
 
-    [HttpGet(Name = "GetPetFact")]
-    public IEnumerable<PetLibrary> Get()
+    [HttpGet]
+    public ActionResult GetPetFact()
     {
-        return Enumerable.Range(0, 1).Select(index => new PetLibrary
+        return Json(Enumerable.Range(0, 1).Select(index => new PetLibrary
         {
             EthelFact = EthelFacts[Random.Shared.Next(EthelFacts.Length)],
             XanderFact = XanderFacts[Random.Shared.Next(XanderFacts.Length)],
             ZukoFact = ZukoFacts[Random.Shared.Next(ZukoFacts.Length)],
             ChuiFact = ChuiFacts[Random.Shared.Next(ChuiFacts.Length)],
 
-        }).ToList();
+        }).ToList());
     }
 }
