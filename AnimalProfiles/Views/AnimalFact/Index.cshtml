@@ -2,7 +2,6 @@
     ViewData["Title"] = "Pet API Homepage";
 }
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">{{ message }}</div>
 
@@ -12,8 +11,30 @@
     createApp({
         data() {
             return {
-                message: "An API dedicated to my pet's facts!"
+                petFacts: [],
+                message: "An API dedicated to my pet's facts!",
+                xanderFacts: [],
+            };
+        },
+        mounted() {
+            var self = this;
+
+            self.getPetFacts();
+        },
+        methods: {
+            getPetFacts() {
+                var self = this;
+
+                axios.get("/AnimalFact/GetPetFact")
+                    .then(function (response) {
+                        self.getPetFacts = response.data.GetPetFact;
+                        
+                        console.log(JSON.parse(JSON.stringify(response)));
+                    })
             }
-        }
+        },
     }).mount('#app')
+
+
+
 </script>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace AnimalProfiles.Controllers;
 
@@ -58,13 +59,17 @@ public class AnimalFactController : Controller
     [HttpGet]
     public ActionResult GetPetFact()
     {
-        return Json(Enumerable.Range(0, 1).Select(index => new PetLibrary
+        var petFactList = Enumerable.Range(0, 1).Select(index => new PetLibrary
         {
             EthelFact = EthelFacts[Random.Shared.Next(EthelFacts.Length)],
             XanderFact = XanderFacts[Random.Shared.Next(XanderFacts.Length)],
             ZukoFact = ZukoFacts[Random.Shared.Next(ZukoFacts.Length)],
             ChuiFact = ChuiFacts[Random.Shared.Next(ChuiFacts.Length)],
 
-        }).ToList());
+        }).ToList();
+
+        var refactoredPetList = JsonConvert.SerializeObject(petFactList);
+
+        return Json(refactoredPetList);
     }
 }
