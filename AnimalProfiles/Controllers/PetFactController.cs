@@ -5,10 +5,9 @@ namespace AnimalProfiles.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AnimalProfilesController : ControllerBase
+    public class PetFactController : ControllerBase
     {
-        private static readonly string[] EthelFacts = new[]
-        {
+        private static readonly string[] EthelFacts = {
             "Drools", "Loves to sleep in the bathroom sink", 
             "Enjoys sweets", 
             "Hates cat treats", 
@@ -17,8 +16,7 @@ namespace AnimalProfiles.Controllers
             "1/2 a face of brown fur and 1/2 a face of orange fur"
         };
 
-        private static readonly string[] XanderFacts = new[]
-        {
+        private static readonly string[] XanderFacts = {
             "Nebelung", 
             "Missing 1 front tooth", 
             "Loves to sunbathe", 
@@ -28,8 +26,7 @@ namespace AnimalProfiles.Controllers
             "Will bite for attention"
         };
 
-        private static readonly string[] ZukoFacts = new[]
-        {
+        private static readonly string[] ZukoFacts = {
             "Full name: Zuko Inyuasha Rengoku Mattli Mills", 
             "Nickname: Firelord", "Amazing hunter", 
             "Cheeks like pikachu", 
@@ -39,8 +36,7 @@ namespace AnimalProfiles.Controllers
             "Enjoys neck scratches"
         };
 
-        private static readonly string[] ChuiFacts = new[]
-        {
+        private static readonly string[] ChuiFacts = {
             "Pomchi ALLEGEDLY", 
             "Natural blonde", 
             "Loves winter", 
@@ -63,8 +59,7 @@ namespace AnimalProfiles.Controllers
                 ZukoFact = ZukoFacts[Random.Shared.Next(ZukoFacts.Length)],
                 ChuiFact = ChuiFacts[Random.Shared.Next(ChuiFacts.Length)],
 
-            })
-                .ToArray();
+            }).ToList();
         }
     }
 }
