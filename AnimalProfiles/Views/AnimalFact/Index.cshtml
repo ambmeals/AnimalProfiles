@@ -3,7 +3,12 @@
 }
 
 
-<div id="app">{{ message }}</div>
+<div id="app">
+    {{ message }}
+    <div>
+        {{ethelFacts.ethelFact}}
+    </div>
+</div>
 
 <script>
     const { createApp } = Vue
@@ -11,14 +16,13 @@
     createApp({
         data() {
             return {
-                petFacts: [],
                 message: "An API dedicated to my pet's facts!",
-                xanderFacts: [],
+                ethelFacts: [],
             };
         },
         mounted() {
             var self = this;
-
+            
             self.getPetFacts();
         },
         methods: {
@@ -27,9 +31,8 @@
 
                 axios.get("/AnimalFact/GetPetFact")
                     .then(function (response) {
-                        self.getPetFacts = response.data.GetPetFact;
-                        
-                        console.log(JSON.parse(JSON.stringify(response)));
+                        self.ethelFacts = response.data[0];
+                        console.log(response);
                     })
             }
         },
