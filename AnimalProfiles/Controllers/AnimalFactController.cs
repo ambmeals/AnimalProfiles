@@ -11,8 +11,7 @@ public class AnimalFactController : Controller
 
     private static readonly string[] EthelFacts =
     {
-        "Drools", 
-        "Loves to sleep in the bathroom sink",
+        "Drools", "Loves to sleep in the bathroom sink",
         "Enjoys sweets",
         "Hates cat treats",
         "Hunts trash",
@@ -59,13 +58,13 @@ public class AnimalFactController : Controller
     [HttpGet]
     public ActionResult GetPetFact()
     {
-        return Json(Enumerable.Range(0, 1).Select(index => new PetLibrary
+        return Json(Enumerable.Range(0, 4).Select(index => new PetLibrary
         {
             EthelFact = EthelFacts[Random.Shared.Next(EthelFacts.Length)],
             XanderFact = XanderFacts[Random.Shared.Next(XanderFacts.Length)],
             ZukoFact = ZukoFacts[Random.Shared.Next(ZukoFacts.Length)],
             ChuiFact = ChuiFacts[Random.Shared.Next(ChuiFacts.Length)],
 
-        }).ToArray());
+        }).ToList());
     }
 }

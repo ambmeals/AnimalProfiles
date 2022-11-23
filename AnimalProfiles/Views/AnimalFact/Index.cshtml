@@ -6,7 +6,16 @@
 <div id="app">
     {{ message }}
     <div>
-        {{ethelFacts.ethelFact}}
+        {{ ethelFacts.ethelFact }}
+    </div>
+    <div>
+        {{ xanderFacts.xanderFact }}
+    </div>
+    <div>
+        {{ zukoFacts.zukoFact }}
+    </div>
+    <div>
+        {{ chuiFacts.chuiFact }}
     </div>
 </div>
 
@@ -18,23 +27,52 @@
             return {
                 message: "An API dedicated to my pet's facts!",
                 ethelFacts: [],
+                xanderFacts: [],
+                zukoFacts: [],
+                chuiFacts: [],
             };
         },
         mounted() {
             var self = this;
             
-            self.getPetFacts();
+            self.getEthelFacts();
+            self.getXanderFacts();
+            self.getZukoFacts();
+            self.getChuiFacts();
         },
         methods: {
-            getPetFacts() {
+            getEthelFacts() {
                 var self = this;
 
                 axios.get("/AnimalFact/GetPetFact")
                     .then(function (response) {
                         self.ethelFacts = response.data[0];
-                        console.log(response);
-                    })
-            }
+                    });
+            },
+            getXanderFacts() {
+                var self = this;
+
+                axios.get("/AnimalFact/GetPetFact")
+                    .then(function (response) {
+                        self.xanderFacts = response.data[1];
+                    });
+            },
+            getZukoFacts() {
+                var self = this;
+
+                axios.get("/AnimalFact/GetPetFact")
+                    .then(function (response) {
+                        self.zukoFacts = response.data[2];
+                    });
+            },
+            getChuiFacts() {
+                var self = this;
+
+                axios.get("/AnimalFact/GetPetFact")
+                    .then(function (response) {
+                        self.chuiFacts = response.data[3];
+                    });
+            },
         },
     }).mount('#app')
 
