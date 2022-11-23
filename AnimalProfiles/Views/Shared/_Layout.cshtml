@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Animal Profiles</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AnimalProfiles.styles.css" asp-append-version="true" />
@@ -23,10 +24,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="PetFact" asp-action="Index">Pet API</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="AnimalFact" asp-action="Index">Pet API</a>
                         </li>
                     </ul>
                 </div>
@@ -41,7 +39,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Amber Mills - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - Amber Mills - < asp-area="" asp-controller="Home" asp-action="Index">
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

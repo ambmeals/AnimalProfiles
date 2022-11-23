@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 namespace AnimalProfiles.Controllers;
 
-public class PetFactController : Controller
+public class AnimalFactController : Controller
 {
     public IActionResult Index()
     {
@@ -55,16 +54,17 @@ public class PetFactController : Controller
         "His best friend does not have a jaw"
     };
 
-    [HttpGet]
-    public ActionResult GetPetFacts()
+
+    [HttpGet(Name = "GetPetFact")]
+    public IEnumerable<PetLibrary> Get()
     {
-        return Json(Enumerable.Range(0, 1).Select(index => new PetLibrary
+        return Enumerable.Range(0, 1).Select(index => new PetLibrary
         {
             EthelFact = EthelFacts[Random.Shared.Next(EthelFacts.Length)],
             XanderFact = XanderFacts[Random.Shared.Next(XanderFacts.Length)],
             ZukoFact = ZukoFacts[Random.Shared.Next(ZukoFacts.Length)],
             ChuiFact = ChuiFacts[Random.Shared.Next(ChuiFacts.Length)],
 
-        }).ToList());
+        }).ToList();
     }
 }
