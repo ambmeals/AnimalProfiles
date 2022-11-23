@@ -1,4 +1,4 @@
-﻿namespace PetFactAPI
+﻿namespace AnimalProfiles
 
 {
     public class PetLibrary
