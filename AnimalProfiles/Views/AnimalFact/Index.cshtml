@@ -32,20 +32,17 @@
         mounted() {
             var self = this;
 
-            self.getPetFacts();
+            axios.get("/AnimalFact/GetPetFact")
+                .then(response => {
+                    self.petFacts = response.data;
+                })
+                .catch(error => {
+                    console.log(error)
+                    self.errored = true
+                })
+                .finally(() => self.loading = false)
+        }, 
 
-        },
-        methods: {
-            getPetFacts() {
-                var self = this;
-
-                axios.get("/AnimalFact/GetPetFact")
-                    .then(function (response) {
-                        self.petFacts = response.data;
-                    })
-                    .catch(error => console.log(error));
-                },
-            },
-        }).mount('#app')
+    }).mount('#app')
 
 </script>
