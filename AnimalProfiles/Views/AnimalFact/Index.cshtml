@@ -58,8 +58,13 @@
         },
         methods: {
             getSingleFact: function () {
+                var self = this;
+                
+                self.loading = true;
                 axios.get("/AnimalFact/GetPetFact")
-                    .then(response => this.petFacts = response.data)
+                    .then(response => 
+                        self.petFacts = response.data)
+                        .finally(() => self.loading = false)
             }
         },
     }).mount('#app')
