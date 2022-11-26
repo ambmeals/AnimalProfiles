@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Content\img\Chui.png" />
-    <None Include="wwwroot\Content\img\Ethel.jpg" />
-    <None Include="wwwroot\Content\img\Xander.jpg" />
-    <None Include="wwwroot\Content\img\Zuko.jpg" />
+    <None Include="wwwroot\content\img\Chui.png" />
+    <None Include="wwwroot\content\img\Ethel.jpg" />
+    <None Include="wwwroot\content\img\Xander.jpg" />
+    <None Include="wwwroot\content\img\Zuko.jpg" />
   </ItemGroup>
 
   <ItemGroup>
