@@ -4,16 +4,29 @@
 
 
 <div id="app">
-    <h1>{{ message }}</h1>
-    <div v-for="petFact in petFacts">
-        {{ petFact.ethelFact }}
-        <br />
-        {{ petFact.xanderFact }}
-        <br />
-        {{ petFact.zukoFact }}
-        <br />
-        {{ petFact.chuiFact }}
-    </div>
+    <section>    
+        <h1>{{ message }}</h1>
+        <div v-for="petFact in petFacts">
+            <div class="card">
+                <div class="upper-container">
+                    <div class="image-container">
+                        <img src='Content/img/Ethel.jpg' style="width: 250px; height: 250px;"/>
+                    </div>
+                </div>
+                <div class="lower-container">
+                    <h3>Ethel</h3>
+                    <h4>{{ petFact.ethelFact }}</h4>
+                </div>
+            </div>
+
+            <br/>
+            {{ petFact.xanderFact }}
+            <br/>
+            {{ petFact.zukoFact }}
+            <br/>
+            {{ petFact.chuiFact }}
+        </div>
+        </section>
 </div>
 
 

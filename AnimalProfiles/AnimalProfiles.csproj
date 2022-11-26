@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Content\img\Chui.png" />
+    <None Include="wwwroot\Content\img\Ethel.jpg" />
+    <None Include="wwwroot\Content\img\Xander.jpg" />
+    <None Include="wwwroot\Content\img\Zuko.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="axios.js" Version="0.18.0" />
     <PackageReference Include="axios.TypeScript.DefinitelyTyped" Version="0.7.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
