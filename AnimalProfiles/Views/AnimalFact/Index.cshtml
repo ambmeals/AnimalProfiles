@@ -4,30 +4,30 @@
 
 
 <div id="app">
-    <section>    
+    <section>
         <h1>{{ message }}</h1>
         <div v-for="petFact in petFacts">
             <div class="card">
                 <div class="upper-container">
                     <div class="image-container">
-                        <img src="content/img/Ethel.jpg"/>
+                        <img src="content/img/Ethel.jpg" />
                     </div>
                 </div>
                 <div class="lower-container">
                     <h3>Ethel</h3>
-                    <h4>{{ petFact.ethelFact }}</h4><br/>
-                    <button>New Fact!</button>
+                    <h4>{{ petFact.ethelFact }}</h4><br />
+                    <button v-on:click="getSingleFact">New Fact!</button>
                 </div>
             </div>
 
-            <br/>
+            <br />
             {{ petFact.xanderFact }}
-            <br/>
+            <br />
             {{ petFact.zukoFact }}
-            <br/>
+            <br />
             {{ petFact.chuiFact }}
         </div>
-        </section>
+    </section>
 </div>
 
 
@@ -55,6 +55,12 @@
                     self.errored = true
                 })
                 .finally(() => self.loading = false)
-        }, 
+        },
+        methods: {
+            getSingleFact: function () {
+                axios.get("/AnimalFact/GetPetFact")
+                    .then(response => this.message = response.data)
+            }
+        },
     }).mount('#app')
 </script>
