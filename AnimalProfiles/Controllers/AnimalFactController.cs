@@ -52,9 +52,8 @@ public class AnimalFactController : Controller
         "Thinks he is a cat",
         "Is happiest when being a menace to society",
         "His best friend does not have a jaw",
-        "Has great eyrbrows"
+        "Has great eyebrows"
     };
-
 
     [HttpGet]
     public ActionResult GetPetFact()
