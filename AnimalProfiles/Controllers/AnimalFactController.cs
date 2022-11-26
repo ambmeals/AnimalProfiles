@@ -51,7 +51,8 @@ public class AnimalFactController : Controller
         "Knows the tea",
         "Thinks he is a cat",
         "Is happiest when being a menace to society",
-        "His best friend does not have a jaw"
+        "His best friend does not have a jaw",
+        "Has great eyrbrows"
     };
 
 
