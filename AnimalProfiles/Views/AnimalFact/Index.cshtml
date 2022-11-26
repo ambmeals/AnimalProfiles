@@ -59,7 +59,7 @@
         methods: {
             getSingleFact: function () {
                 axios.get("/AnimalFact/GetPetFact")
-                    .then(response => this.message = response.data)
+                    .then(response => this.petFacts = response.data)
             }
         },
     }).mount('#app')
