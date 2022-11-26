@@ -6,6 +6,7 @@
 <div id="app">
     <section>
         <h1>{{ message }}</h1>
+        <h1>{{ errorMessage }}</h1>
         <div v-for="petFact in petFacts">
             <div class="card">
                 <div class="upper-container">
@@ -14,7 +15,7 @@
                     </div>
                 </div>
                 <div class="lower-container">
-                    <h3>Ethel</h3>
+                    <h3>Ethel</h3><br/>
                     <h4>{{ petFact.ethelFact }}</h4><br />
                     <button v-on:click="getSingleFact">New Fact!</button>
                 </div>
@@ -41,6 +42,7 @@
                 petFacts: [],
                 loading: true,
                 errored: false,
+                errorMessage: "",
             };
         },
         mounted() {
@@ -51,20 +53,19 @@
                     self.petFacts = response.data;
                 })
                 .catch(error => {
-                    console.log(error)
-                    self.errored = true
+                    self.errorMessage = "error getting facts...";
+                    self.errored = true;
                 })
                 .finally(() => self.loading = false)
         },
         methods: {
             getSingleFact: function () {
                 var self = this;
-                
+
                 self.loading = true;
                 axios.get("/AnimalFact/GetPetFact")
-                    .then(response => 
-                        self.petFacts = response.data)
-                        .finally(() => self.loading = false)
+                    .then(response => self.petFacts = response.data)
+                    .finally(() => self.loading = false)
             }
         },
     }).mount('#app')
