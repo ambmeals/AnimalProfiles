@@ -7,11 +7,11 @@
     <h1>{{ message }}</h1>
     <div v-for="petFact in petFacts">
         {{ petFact.ethelFact }}
-        <br/>
+        <br />
         {{ petFact.xanderFact }}
-        <br/>
+        <br />
         {{ petFact.zukoFact }}
-        <br/>
+        <br />
         {{ petFact.chuiFact }}
     </div>
 </div>
@@ -25,11 +25,13 @@
             return {
                 message: "A REST API dedicated to my pet's facts!",
                 petFacts: [],
+                loading: true,
+                errored: false
             };
         },
         mounted() {
             var self = this;
-            
+
             self.getPetFacts();
 
         },
@@ -40,9 +42,10 @@
                 axios.get("/AnimalFact/GetPetFact")
                     .then(function (response) {
                         self.petFacts = response.data;
-                    });
+                    })
+                    .catch(error => console.log(error));
+                },
             },
-        },
-    }).mount('#app')
+        }).mount('#app')
 
 </script>
