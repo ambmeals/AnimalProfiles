@@ -58,7 +58,7 @@ public class AnimalFactController : Controller
     [HttpGet]
     public ActionResult GetPetFact()
     {
-        return Json(Enumerable.Range(0, 4).Select(index => new PetLibrary
+        return Json(Enumerable.Range(0, 1).Select(index => new PetLibrary
         {
             EthelFact = EthelFacts[Random.Shared.Next(EthelFacts.Length)],
             XanderFact = XanderFacts[Random.Shared.Next(XanderFacts.Length)],
