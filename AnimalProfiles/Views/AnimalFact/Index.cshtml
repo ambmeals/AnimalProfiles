@@ -17,7 +17,7 @@
                 <div class="lower-container">
                     <h3>Ethel</h3><br/>
                     <h4>{{ petFact.ethelFact }}</h4><br />
-                    <button v-on:click="getSingleFact">New Fact!</button>
+                    <button v-on:click="getNewFact">New Fact!</button>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                 .finally(() => self.loading = false)
         },
         methods: {
-            getSingleFact: function () {
+            getNewFact: function () {
                 var self = this;
 
                 self.loading = true;
