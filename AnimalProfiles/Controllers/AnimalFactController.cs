@@ -11,12 +11,13 @@ public class AnimalFactController : Controller
 
     private static readonly string[] EthelFacts =
     {
-        "Drools", "Loves to sleep in the bathroom sink",
+        "Drools", 
+        "Loves to sleep in the bathroom sink",
         "Enjoys sweets",
         "Hates cat treats",
         "Hunts trash",
         "Loves strangers",
-        "2 faced! 1/2 brown & 1/2 orange"
+        "2 faced!\n1/2 brown & 1/2 orange"
     };
 
     private static readonly string[] XanderFacts =
@@ -32,8 +33,8 @@ public class AnimalFactController : Controller
 
     private static readonly string[] ZukoFacts =
     {
-        "Full name: Zuko Inyuasha Rengoku Mattli Mills",
-        "Nickname: Firelord", "Amazing hunter",
+        "Full name:\nZuko Inyuasha Rengoku Mattli Mills",
+        "Nickname:\nFirelord", "Amazing hunter",
         "Cheeks like pikachu",
         "Adopted from Craigslist",
         "Enjoys tormenting his siblings",
