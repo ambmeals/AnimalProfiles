@@ -17,7 +17,7 @@
                 <div class="lower-container">
                     <h3>Ethel</h3><br/>
                     <h4>{{ petFact.ethelFact }}</h4><br />
-                    <button v-on:click="getNewFact">New Fact!</button>
+                    <button v-on:click="getNewFact()">New Fact!</button>
                 </div>
             </div>
 
@@ -40,8 +40,8 @@
             return {
                 message: "A REST API dedicated to my pet's facts!",
                 petFacts: [],
-                loading: true,
-                errored: false,
+                pageLoading: true,
+                factLoading: true,
                 errorMessage: "",
             };
         },
@@ -54,18 +54,17 @@
                 })
                 .catch(error => {
                     self.errorMessage = "error getting facts...";
-                    self.errored = true;
                 })
-                .finally(() => self.loading = false)
+                .finally(() => self.pageLoading = false)
         },
         methods: {
-            getNewFact: function () {
+            getNewFact() {
                 var self = this;
 
-                self.loading = true;
+                self.factLoading = true;
                 axios.get("/AnimalFact/GetPetFact")
                     .then(response => self.petFacts = response.data)
-                    .finally(() => self.loading = false)
+                    .finally(() => self.factLoading = false)
             }
         },
     }).mount('#app')

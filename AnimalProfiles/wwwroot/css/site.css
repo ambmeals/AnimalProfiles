@@ -17,6 +17,19 @@ body {
   margin-bottom: 60px;
 }
 
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    width: 460px;
+}
+
 .upper-container {
     height: 100px;
     background: linear-gradient(to left, #00f74a,#ffee02);
@@ -46,7 +59,7 @@ body {
 }
 
 .lower-container {
-    margin-top: 60px;
+    margin-top: 300px;
     height: 300px;
     background: white;
     text-align: center;

@@ -16,7 +16,7 @@ public class AnimalFactController : Controller
         "Hates cat treats",
         "Hunts trash",
         "Loves strangers",
-        "1/2 a face of brown fur and 1/2 a face of orange fur"
+        "2 faced! 1/2 brown & 1/2 orange"
     };
 
     private static readonly string[] XanderFacts =
