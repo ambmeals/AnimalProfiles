@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Pet API Homepage";
+}
+
+
+<div id="app">
+    <section>
+        <h1>{{ message }}</h1>
+        <h1>{{ errorMessage }}</h1>
+        <div v-for="petFact in petFacts">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="upper-containerEthel">
+                            <div class="image-container">
+                                <img src="content/img/Ethel.jpg" />
+                            </div>
+                        </div>
+                        <div class="lower-container">
+                            <h3>Ethel</h3><br />
+                            <h4>{{ petFact.ethelFact }}</h4><br />
+                            <button v-on:click="getNewFact()">New Fact!</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                            <div class="upper-containerXander">
+                                <div class="image-container">
+                                    <img src="content/img/Xander.jpg" />
+                                </div>
+                            </div>
+                            <div class="lower-container">
+                                <h3>Xander</h3><br />
+                                <h4>{{ petFact.xanderFact }}</h4><br />
+                                <button v-on:click="getNewFact()">New Fact!</button>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                            <div class="upper-containerZuko">
+                                <div class="image-container">
+                                    <img src="content/img/Zuko.jpg" />
+                                </div>
+                            </div>
+                            <div class="lower-container">
+                                <h3>Zuko</h3><br />
+                                <h4>{{ petFact.zukoFact }}</h4><br />
+                                <button v-on:click="getNewFact()">New Fact!</button>
+                            </div>
+                    </div>
+                    <div class="card">
+                            <div class="upper-containerChui">
+                                <div class="image-container">
+                                    <img src="content/img/Chui.png" />
+                                </div>
+                            </div>
+                            <div class="lower-container">
+                                <h3>Chui</h3><br />
+                                <h4>{{ petFact.chuiFact }}</h4><br />
+                                <button v-on:click="getNewFact()">New Fact!</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            {{ petFact.xanderFact }}
+            <br />
+            {{ petFact.zukoFact }}
+            <br />
+            {{ petFact.chuiFact }}
+        </div>
+    </section>
+</div>
+
+
+<script>
+    const { createApp } = Vue
+
+    createApp({
+        data() {
+            return {
+                message: "A REST API dedicated to my pet's facts!",
+                petFacts: [],
+                pageLoading: true,
+                factLoading: true,
+                errorMessage: "",
+            };
+        },
+        mounted() {
+            var self = this;
+
+            axios.get("/AnimalFact/GetPetFact")
+                .then(response => {
+                    self.petFacts = response.data;
+                })
+                .catch(error => {
+                    self.errorMessage = "error getting facts...";
+                })
+                .finally(() => self.pageLoading = false)
+        },
+        methods: {
+            getNewFact() {
+                var self = this;
+
+                self.factLoading = true;
+                axios.get("/AnimalFact/GetPetFact")
+                    .then(response => self.petFacts = response.data)
+                    .finally(() => self.factLoading = false)
+            }
+        },
+    }).mount('#app')
+</script>
