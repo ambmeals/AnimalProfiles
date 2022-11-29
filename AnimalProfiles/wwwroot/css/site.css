@@ -30,7 +30,7 @@ body {
     width: 460px;
 }
 
-.upper-container {
+.upper-containerChui {
     height: 100px;
     background: linear-gradient(to left, #00f74a,#ffee02);
 }
@@ -40,12 +40,12 @@ body {
     background: linear-gradient(to left, pink, purple);
 }
 
-.upper-container2 {
+.upper-containerXander {
     height: 100px;
     background: linear-gradient(to left, lightblue, darkblue);
 }
 
-.upper-container3 {
+.upper-containerZuko {
     height: 100px;
     background: linear-gradient(to left, orange, red);
 }
