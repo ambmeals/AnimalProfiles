@@ -1,0 +1,111 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    width: 460px;
+}
+
+.upper-containerChui {
+    height: 100px;
+    background: linear-gradient(to left, #00f74a,#ffee02);
+}
+
+.upper-containerEthel {
+    height: 100px;
+    background: linear-gradient(to left, pink, purple);
+}
+
+.upper-containerXander {
+    height: 100px;
+    background: linear-gradient(to left, lightblue, darkblue);
+}
+
+.upper-containerZuko {
+    height: 100px;
+    background: linear-gradient(to left, orange, red);
+}
+
+.image-container img {
+    background: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    transform: translate(95px,45px);
+}
+
+.lower-container {
+    margin-top: 300px;
+    height: 300px;
+    background: white;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.lower-container h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+.lower-container h3 {
+    color: #2f2d2e;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.lower-container h4 {
+    color: #00b94d;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.lower-container p {
+    margin: 1rem;
+    font-weight: 300;
+    color: #2f2d2e;
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+button {
+    margin: 1rem;
+    margin-top: 0;
+    color: #2f2d2e;
+    background-color: white;
+    border: 2px solid green;
+    padding: 0.6rem;
+    border-radius: 6px;
+    transition-duration: 0.5s;
+    animation: ease-in-out;
+}
+
+button:hover {
+    background-image: linear-gradient(to left, #00f74a,#ffee02);
+    transform: scale(1.1);
+    border: none;
+    color: black;
+}
