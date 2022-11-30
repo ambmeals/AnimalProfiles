@@ -20,6 +20,7 @@
   <ItemGroup>
     <PackageReference Include="axios.js" Version="0.18.0" />
     <PackageReference Include="axios.TypeScript.DefinitelyTyped" Version="0.7.7" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
