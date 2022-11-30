@@ -21,6 +21,7 @@ img {
     width: 55%;
     height: 55%;
     object-fit: contain;
+    max-width: 18.75rem;
 }
 
 .card {
@@ -60,7 +61,11 @@ img {
 .image-container img {
     background: white;
     border-radius: 50%;
-    transform: translate(95px,45px);
+    transform: translate(-15px,-25px);
+    display: flex;
+    float: right;
+    margin-top: 15%;
+    margin-right: 20%;
 }
 
 .lower-container {
