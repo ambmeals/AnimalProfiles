@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\content\img\Chui.png" />
     <None Include="wwwroot\content\img\My project.jpg" />
     <None Include="wwwroot\content\img\Xander.jpg" />
     <None Include="wwwroot\content\img\Zuko.jpg" />
