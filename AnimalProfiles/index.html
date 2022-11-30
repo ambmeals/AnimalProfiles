@@ -9,8 +9,8 @@
         <h1>{{ errorMessage }}</h1>
         <div v-for="petFact in petFacts">
             <div class="row text-center">
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card mb-4">
                         <div class="upper-containerEthel">
                             <div class="image-container">
                                 <img src="content/img/Ethel.jpg" />
@@ -22,7 +22,7 @@
                             <button v-on:click="getNewFact()">New Fact!</button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card mb-4">
                         <div class="upper-containerXander">
                             <div class="image-container">
                                 <img src="/content/img/Xander.jpg" />
@@ -35,8 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
+                    <div class="card mb-4">
                         <div class="upper-containerZuko">
                             <div class="image-container">
                                 <img src="content/img/Zuko.jpg" />
@@ -48,7 +47,7 @@
                             <button v-on:click="getNewFact()">New Fact!</button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card mb-4">
                         <div class="upper-containerChui">
                             <div class="image-container">
                                 <img src="content/img/Chui.png" />
@@ -60,14 +59,7 @@
                             <button v-on:click="getNewFact()">New Fact!</button>
                         </div>
                     </div>
-                </div>
             </div>
-            <br />
-            {{ petFact.xanderFact }}
-            <br />
-            {{ petFact.zukoFact }}
-            <br />
-            {{ petFact.chuiFact }}
         </div>
     </section>
 </div>
@@ -79,7 +71,7 @@
     createApp({
         data() {
             return {
-                message: "A REST API dedicated to my pet's facts!",
+                message: "randomized facts about my pets using vue, mvc, c#",
                 petFacts: [],
                 pageLoading: true,
                 factLoading: true,
