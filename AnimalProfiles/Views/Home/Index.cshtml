@@ -5,60 +5,74 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <div id="app">
-        <section>
-            <h1>{{ message }}</h1>
-            <h1>{{ errorMessage }}</h1>
-            <div v-for="petFact in petFacts">
-                <div class=card-deck>
-                    <div class="card">
-                        <div class="upper-containerEthel">
-                            <div class="image-container">
-                                <img src="content/img/Ethel.jpg" />
+            <section>
+                <h1>{{ message }}</h1>
+                <h1>{{ errorMessage }}</h1>
+                <div v-for="petFact in petFacts">
+                <div class="container">
+                    <div class="card-deck row text-center p-2">
+                        <div class="card h-100">
+                            <div class="upper-containerEthel">
+                                <img class="card-img-top" src="content/img/Ethel.jpg">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Ethel</h3>
+                                <p class="card-text mb-4">
+                                    {{ petFact.ethelFact }}
+                                </p>
+                            </div>
+                            <div class="card-footer">
                             </div>
                         </div>
-                        <div class="lower-container">
-                            <h3>Ethel</h3><br />
-                            <h4>{{ petFact.ethelFact }}</h4><br />
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="upper-containerXander">
-                            <div class="image-container">
-                                <img src="content/img/Xander.jpg" />
+                        <div class="card h-100">
+                            <div class="upper-containerXander">
+                                <img class="card-img-top" src="content/img/Xander.jpg">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Xander</h3>
+                                <p class="card-text mb-4">
+                                    {{ petFact.xanderFact }}
+                                </p>
+                            </div>
+                            <div class="card-footer">
                             </div>
                         </div>
-                        <div class="lower-container">
-                            <h3>Xander</h3><br />
-                            <h4>{{ petFact.xanderFact }}</h4><br />
+                        <div class="card h-100">
+                            <div class="upper-containerZuko">
+                                <img class="card-img-top" src="content/img/Zuko.jpg">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Zuko</h3>
+                                <p class="card-text mb-4">
+                                    {{ petFact.zukoFact }}
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                            </div>
                         </div>
-                    </div>
+                        <div class="card h-100">
+                            <div class="upper-containerChui">
+                                <img class="card-img-top" src="content/img/Chui.png">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Chui</h3>
+                                <p class="card-text mb-4">
+                                    {{ petFact.chuiFact }}
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                            </div>
+                        </div>
 
-                    <div class="card">
-                        <div class="upper-containerZuko">
-                            <div class="image-container">
-                                <img src="content/img/Zuko.jpg" />
-                            </div>
-                        </div>
-                        <div class="lower-container">
-                            <h3>Zuko</h3><br />
-                            <h4>{{ petFact.zukoFact }}</h4><br />
-                        </div>
                     </div>
-                    <div class="card">
-                        <div class="upper-containerChui">
-                            <div class="image-container">
-                                <img src="content/img/Chui.png" />
-                            </div>
-                        </div>
-                        <div class="lower-container">
-                            <h3>Chui</h3><br />
-                            <h4>{{ petFact.chuiFact }}</h4><br />
-                        </div>
                     </div>
                 </div>
+            </section>
+            <div class="m-5 p-4">
+                <button v-on:click="getNewFact()">
+                    New Fact!
+                </button>
             </div>
-            <button class="m-5 pb-2" v-on:click="getNewFact()">New Fact!</button>
-        </section>
     </div>
 </div>
 
