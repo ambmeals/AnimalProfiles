@@ -19,7 +19,6 @@
                         <div class="lower-container">
                             <h3>Ethel</h3><br />
                             <h4>{{ petFact.ethelFact }}</h4><br />
-                            <button v-on:click="getNewFact()">New Fact!</button>
                         </div>
                     </div>
                     <div class="card">
@@ -31,7 +30,6 @@
                         <div class="lower-container">
                             <h3>Xander</h3><br />
                             <h4>{{ petFact.xanderFact }}</h4><br />
-                            <button v-on:click="getNewFact()">New Fact!</button>
                         </div>
                     </div>
 
@@ -44,7 +42,6 @@
                         <div class="lower-container">
                             <h3>Zuko</h3><br />
                             <h4>{{ petFact.zukoFact }}</h4><br />
-                            <button v-on:click="getNewFact()">New Fact!</button>
                         </div>
                     </div>
                     <div class="card">
@@ -56,12 +53,11 @@
                         <div class="lower-container">
                             <h3>Chui</h3><br />
                             <h4>{{ petFact.chuiFact }}</h4><br />
-                            <button v-on:click="getNewFact()">New Fact!</button>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <button class="m-5 pb-2" v-on:click="getNewFact()">New Fact!</button>
         </section>
     </div>
 </div>
