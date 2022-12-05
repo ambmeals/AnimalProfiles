@@ -5,10 +5,10 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <div id="app">
-            <section>
-                <h1>{{ message }}</h1><br/>
-                <h1>{{ errorMessage }}</h1>
-                <div v-for="petFact in petFacts">
+        <section>
+            <h1>{{ message }}</h1><br />
+            <h1>{{ errorMessage }}</h1>
+            <div v-for="petFact in petFacts">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-sm-4 g-4 text-center">
                         <div class="col">
@@ -54,31 +54,33 @@
                                 </div>
                                 <div class="card-footer">
                                 </div>
-                            </div></div>
+                            </div>
+                        </div>
                         <div class="col">
-                        <div class="card h-100">
-                            <div class="upper-containerChui">
-                                <img class="card-img-top" src="content/img/Chui.png">
+                            <div class="card h-100">
+                                <div class="upper-containerChui">
+                                    <img class="card-img-top" src="content/img/Chui.png">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Chui</h3>
+                                    <p class="card-text mb-4">
+                                        {{ petFact.chuiFact }}
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Chui</h3>
-                                <p class="card-text mb-4">
-                                    {{ petFact.chuiFact }}
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                            </div>
-                        </div></div>
+                        </div>
 
                     </div>
-                    </div>
                 </div>
-            </section>
-            <div class="m-5 p-4">
-                <button v-on:click="getNewFact()">
-                    New Fact!
-                </button>
             </div>
+        </section>
+        <div class="m-5 p-4">
+            <button v-on:click="getNewFact()">
+                New Fact!
+            </button>
+        </div>
     </div>
 </div>
 
