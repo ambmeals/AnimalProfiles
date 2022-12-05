@@ -6,50 +6,56 @@
     <h1 class="display-4">Welcome</h1>
     <div id="app">
             <section>
-                <h1>{{ message }}</h1>
+                <h1>{{ message }}</h1><br/>
                 <h1>{{ errorMessage }}</h1>
                 <div v-for="petFact in petFacts">
                 <div class="container">
-                    <div class="card-deck row text-center p-2">
-                        <div class="card h-100">
-                            <div class="upper-containerEthel">
-                                <img class="card-img-top" src="content/img/Ethel.jpg">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Ethel</h3>
-                                <p class="card-text mb-4">
-                                    {{ petFact.ethelFact }}
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                            </div>
-                        </div>
-                        <div class="card h-100">
-                            <div class="upper-containerXander">
-                                <img class="card-img-top" src="content/img/Xander.jpg">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Xander</h3>
-                                <p class="card-text mb-4">
-                                    {{ petFact.xanderFact }}
-                                </p>
-                            </div>
-                            <div class="card-footer">
+                    <div class="row row-cols-1 row-cols-sm-4 g-4 text-center">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="upper-containerEthel">
+                                    <img class="card-img-top" src="content/img/Ethel.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Ethel</h3>
+                                    <p class="card-text mb-4">
+                                        {{ petFact.ethelFact }}
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                </div>
                             </div>
                         </div>
-                        <div class="card h-100">
-                            <div class="upper-containerZuko">
-                                <img class="card-img-top" src="content/img/Zuko.jpg">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Zuko</h3>
-                                <p class="card-text mb-4">
-                                    {{ petFact.zukoFact }}
-                                </p>
-                            </div>
-                            <div class="card-footer">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="upper-containerXander">
+                                    <img class="card-img-top" src="content/img/Xander.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Xander</h3>
+                                    <p class="card-text mb-4">
+                                        {{ petFact.xanderFact }}
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                </div>
                             </div>
                         </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="upper-containerZuko">
+                                    <img class="card-img-top" src="content/img/Zuko.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Zuko</h3>
+                                    <p class="card-text mb-4">
+                                        {{ petFact.zukoFact }}
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                </div>
+                            </div></div>
+                        <div class="col">
                         <div class="card h-100">
                             <div class="upper-containerChui">
                                 <img class="card-img-top" src="content/img/Chui.png">
@@ -62,7 +68,7 @@
                             </div>
                             <div class="card-footer">
                             </div>
-                        </div>
+                        </div></div>
 
                     </div>
                     </div>
@@ -83,7 +89,7 @@
     createApp({
         data() {
             return {
-                message: "API pet fact app",
+                message: "API pet fact app - desktop view for best user experience",
                 petFacts: [],
                 pageLoading: true,
                 factLoading: true,
