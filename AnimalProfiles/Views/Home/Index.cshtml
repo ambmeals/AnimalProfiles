@@ -11,18 +11,18 @@
             <div v-for="petFact in petFacts">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-sm-4 g-4 text-center">
-                        <div class="col">
+                        <div class="col mb-2">
                             <div class="card h-100">
                                 <div class="upper-containerEthel">
                                     <img class="card-img-top" src="content/img/Ethel.jpg">
                                 </div>
                                 <div class="card-body">
-                                    <h3 class="card-title">Ethel</h3>
-                                    <p class="card-text mb-4">
+                                    <p class="card-text mt-4">
                                         {{ petFact.ethelFact }}
                                     </p>
                                 </div>
                                 <div class="card-footer">
+                                    <h3 class="card-title">Ethel</h3>
                                 </div>
                             </div>
                         </div>
@@ -32,12 +32,12 @@
                                     <img class="card-img-top" src="content/img/Xander.jpg">
                                 </div>
                                 <div class="card-body">
-                                    <h3 class="card-title">Xander</h3>
                                     <p class="card-text mb-4">
                                         {{ petFact.xanderFact }}
                                     </p>
                                 </div>
                                 <div class="card-footer">
+                                    <h3 class="card-title">Xander</h3>
                                 </div>
                             </div>
                         </div>
@@ -47,12 +47,12 @@
                                     <img class="card-img-top" src="content/img/Zuko.jpg">
                                 </div>
                                 <div class="card-body">
-                                    <h3 class="card-title">Zuko</h3>
                                     <p class="card-text mb-4">
                                         {{ petFact.zukoFact }}
                                     </p>
                                 </div>
                                 <div class="card-footer">
+                                    <h3 class="card-title">Zuko</h3>
                                 </div>
                             </div>
                         </div>
@@ -62,12 +62,12 @@
                                     <img class="card-img-top" src="content/img/Chui.png">
                                 </div>
                                 <div class="card-body">
-                                    <h3 class="card-title">Chui</h3>
                                     <p class="card-text mb-4">
                                         {{ petFact.chuiFact }}
                                     </p>
                                 </div>
                                 <div class="card-footer">
+                                    <h3 class="card-title">Chui</h3>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </section>
-        <div class="m-5 p-4">
+        <div class="m-5 p-2">
             <button v-on:click="getNewFact()">
                 New Fact!
             </button>
@@ -84,14 +84,13 @@
     </div>
 </div>
 
-
 <script>
     const { createApp } = Vue
 
     createApp({
         data() {
             return {
-                message: "API pet fact app - desktop view for best user experience",
+                message: "API pet fact app - desktop view for best experience",
                 petFacts: [],
                 pageLoading: true,
                 factLoading: true,
@@ -123,4 +122,3 @@
     }).mount('#app')
 </script>
 
-</div>
