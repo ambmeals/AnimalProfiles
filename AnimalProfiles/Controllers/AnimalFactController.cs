@@ -11,7 +11,7 @@ public class AnimalFactController : Controller
 
     private static readonly string[] EthelFacts =
     {
-        "Drools", 
+        "Drools",
         "Loves to sleep in the bathroom sink",
         "Enjoys sweets",
         "Hates cat treats",
@@ -64,8 +64,43 @@ public class AnimalFactController : Controller
             EthelFact = EthelFacts[Random.Shared.Next(EthelFacts.Length)],
             XanderFact = XanderFacts[Random.Shared.Next(XanderFacts.Length)],
             ZukoFact = ZukoFacts[Random.Shared.Next(ZukoFacts.Length)],
-            ChuiFact = ChuiFacts[Random.Shared.Next(ChuiFacts.Length)],
-
+            ChuiFact = ChuiFacts[Random.Shared.Next(ChuiFacts.Length)]
         }).ToList());
+    }
+
+    [HttpGet]
+    public ActionResult GetEthelFact()
+    {
+        return Json
+        (
+            EthelFacts[Random.Shared.Next(EthelFacts.Length)]
+        );
+    }
+
+    [HttpGet]
+    public ActionResult GetXanderFact()
+    {
+        return Json
+        (
+            EthelFacts[Random.Shared.Next(XanderFacts.Length)]
+        );
+    }
+
+    [HttpGet]
+    public ActionResult GetZukoFact()
+    {
+        return Json
+        (
+            EthelFacts[Random.Shared.Next(ZukoFacts.Length)]
+        );
+    }
+
+    [HttpGet]
+    public ActionResult GetChuiFact()
+    {
+        return Json
+        (
+            EthelFacts[Random.Shared.Next(ChuiFacts.Length)]
+        );
     }
 }

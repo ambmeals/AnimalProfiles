@@ -17,57 +17,83 @@
                                     <img class="card-img-top" src="content/img/Ethel.jpg">
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-text mt-4">
-                                        {{ petFact.ethelFact }}
+                                    <p class="card-text mt-4" v-show="ethelFacts.length == 0">
+                                    {{ petFact.ethelFact }}
                                     </p>
+                                    <p class="card-text mt-4" v-show="ethelFacts.length > 0">
+                                        {{ethelFacts}}
+                                        </p>
                                 </div>
                                 <div class="card-footer">
                                     <h3 class="card-title">Ethel</h3>
+                                    <button class="mt-1" v-on:click="getEthelFact()">
+                                        New Fact!
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col mb-2">
                             <div class="card h-100">
                                 <div class="upper-containerXander">
                                     <img class="card-img-top" src="content/img/Xander.jpg">
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-text mb-4">
-                                        {{ petFact.xanderFact }}
+                                    <p class="card-text mt-4" v-show="xanderFacts.length == 0">
+                                    {{ petFact.xanderFact }}
                                     </p>
+                                    <p class="card-text mt-4" v-show="xanderFacts.length > 0">
+                                        {{xanderFacts}}
+                                        </p>
                                 </div>
                                 <div class="card-footer">
                                     <h3 class="card-title">Xander</h3>
+                                    <button class="mt-1" v-on:click="getXanderFact()">
+                                        New Fact!
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col mb-2">
                             <div class="card h-100">
                                 <div class="upper-containerZuko">
                                     <img class="card-img-top" src="content/img/Zuko.jpg">
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-text mb-4">
+                                    <p class="card-text mt-4" v-show="zukoFacts.length == 0">
                                         {{ petFact.zukoFact }}
+                                    </p>
+                                    <p class="card-text mt-4" v-show="zukoFacts.length > 0">
+                                        {{zukoFacts}}
                                     </p>
                                 </div>
                                 <div class="card-footer">
-                                    <h3 class="card-title">Zuko</h3>
+                                    <h3 class="card-title mt-4">
+                                        Zuko
+                                    </h3>
+                                    <button class="mt-1" v-on:click="getZukoFact()">
+                                        New Fact!
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col mb-2">
                             <div class="card h-100">
                                 <div class="upper-containerChui">
                                     <img class="card-img-top" src="content/img/Chui.png">
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-text mb-4">
+                                    <p class="card-text mb-4" v-show="chuiFacts.length == 0">
                                         {{ petFact.chuiFact }}
+                                    </p>
+                                    <p class="card-text mt-4" v-show="chuiFacts.length > 0">
+                                        {{chuiFacts}}
                                     </p>
                                 </div>
                                 <div class="card-footer">
-                                    <h3 class="card-title">Chui</h3>
+                                    <h3 class="card-title mt-4">Chui</h3>
+                                    <button class="mt-1" v-on:click="getChuiFact()">
+                                        New Fact!
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -92,6 +118,10 @@
             return {
                 message: "API pet fact app - desktop view for best experience",
                 petFacts: [],
+                ethelFacts: [],
+                xanderFacts: [],
+                zukoFacts: [],
+                chuiFacts: [],
                 pageLoading: true,
                 factLoading: true,
                 errorMessage: "",
@@ -116,8 +146,54 @@
                 self.factLoading = true;
                 axios.get("/AnimalFact/GetPetFact")
                     .then(response => self.petFacts = response.data)
-                    .finally(() => self.factLoading = false)
-            }
+                    .catch(error => {
+                        self.errorMessage = "error getting facts...";
+                    })
+                    .finally(() => self.factLoading = false);
+            },
+            getEthelFact() {
+                var self = this;
+
+                self.factLoading = true;
+                axios.get("/AnimalFact/GetEthelFact")
+                    .then(response => self.ethelFacts = response.data)
+                    .catch(error => {
+                        self.errorMessage = "error getting facts...";
+                    })
+                    .finally(() => self.factLoading = false);
+            },
+            getXanderFact() {
+                var self = this;
+
+                self.factLoading = true;
+                axios.get("/AnimalFact/GetXanderFact")
+                    .then(response => self.xanderFacts = response.data)
+                    .catch(error => {
+                        self.errorMessage = "error getting facts...";
+                    })
+                    .finally(() => self.factLoading = false);
+            },
+            getZukoFact() {
+                var self = this;
+
+                self.factLoading = true;
+                axios.get("/AnimalFact/GetZukoFact")
+                    .then(response => self.zukoFacts = response.data).catch(error => {
+                        self.errorMessage = "error getting facts...";
+                    })
+                    .finally(() => self.factLoading = false);
+            },
+            getChuiFact() {
+                var self = this;
+
+                self.factLoading = true;
+                axios.get("/AnimalFact/GetChuiFact")
+                    .then(response => self.chuiFacts = response.data)
+                    .catch(error => {
+                        self.errorMessage = "error getting facts...";
+                    })
+                    .finally(() => self.factLoading = false);
+            },
         },
     }).mount('#app')
 </script>
