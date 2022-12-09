@@ -160,9 +160,6 @@
                 axios.get("/AnimalFact/GetEthelFact")
                     .then(response => { 
                         self.ethelFacts = response.data;
-                    })
-                    .catch(error => {
-                        self.errorMessage = "error getting facts..."
                     });
             },
             getXanderFact() {
@@ -172,9 +169,6 @@
                 axios.get("/AnimalFact/GetXanderFact")
                     .then(response => { 
                         self.xanderFacts = response.data;
-                    })
-                    .catch(error => {
-                        self.errorMessage = "error getting facts..."
                     });
             },
             getZukoFact() {
@@ -184,9 +178,6 @@
                 axios.get("/AnimalFact/GetZukoFact")
                     .then(response => {
                         self.zukoFacts = response.data;
-                    })
-                    .catch(error => {
-                        self.errorMessage = "error getting facts..."
                     });
             },
             getChuiFact() {
@@ -196,9 +187,6 @@
                 axios.get("/AnimalFact/GetChuiFact")
                     .then(response => {
                         self.chuiFacts = response.data;
-                    })
-                    .catch(error => {
-                        self.errorMessage = "error getting facts..."
                     });
             },
         },
