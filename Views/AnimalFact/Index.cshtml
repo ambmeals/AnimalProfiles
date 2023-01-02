@@ -74,39 +74,97 @@
 
 
 <script>
-    const { createApp } = Vue
+  const { createApp } = Vue;
 
-    createApp({
-        data() {
-            return {
-                message: "A REST API dedicated to my pet's facts!",
-                petFacts: [],
-                pageLoading: true,
-                factLoading: true,
-                errorMessage: "",
-            };
-        },
-        mounted() {
-            var self = this;
-
-            axios.get("/AnimalFact/GetPetFact")
-                .then(response => {
-                    self.petFacts = response.data;
-                })
-                .catch(error => {
-                    self.errorMessage = "error getting facts...";
-                })
-                .finally(() => self.pageLoading = false)
-        },
-        methods: {
-            getNewFact() {
-                var self = this;
-
-                self.factLoading = true;
-                axios.get("/AnimalFact/GetPetFact")
-                    .then(response => self.petFacts = response.data)
-                    .finally(() => self.factLoading = false)
-            }
-        },
-    }).mount('#app')
+  createApp({
+    data() {
+      return {
+        message: "API pet fact app - desktop view for best experience",
+        petFacts: [],
+        ethelFacts: [],
+        xanderFacts: [],
+        zukoFacts: [],
+        chuiFacts: [],
+        loading: true,
+        errorMessage: "",
+      };
+    },
+    async mounted() {
+      var self = this;
+      try {
+        self.petFacts = await self.getAnimalFacts("/AnimalFact/GetPetFact");
+      } catch (error) {
+        self.errorMessage = "error getting facts...";
+      } finally {
+        self.loading = false;
+      }
+    },
+    methods: {
+      async getAnimalFacts(url) {
+        var self = this;
+        try {
+          const response = await axios.get(url);
+          return response.data;
+        } catch (error) {
+          console.error(error);
+          return [];
+        }
+      },
+      async getNewFact() {
+        var self = this;
+        self.loading = true;
+        try {
+          self.petFacts = await self.getAnimalFacts("/AnimalFact/GetPetFact");
+        } catch (error) {
+          self.errorMessage = "error getting facts...";
+        } finally {
+          self.loading = false;
+        }
+      },
+      async getEthelFact() {
+        var self = this;
+        self.loading = true;
+        try {
+          self.ethelFacts = await self.getAnimalFacts("/AnimalFact/GetEthelFact");
+        } catch (error) {
+          self.errorMessage = "error getting facts...";
+        } finally {
+          self.loading = false;
+        }
+      },
+      async getXanderFact() {
+        var self = this;
+        self.loading = true;
+        try {
+          self.xanderFacts = await self.getAnimalFacts("/AnimalFact/GetXanderFact");
+        } catch (error) {
+          self.errorMessage = "error getting facts...";
+        } finally {
+          self.loading = false;
+        }
+      },
+      async getZukoFact() {
+        var self = this;
+        self.loading = true;
+        try {
+          self.zukoFacts = await self.getAnimalFacts("/AnimalFact/GetZukoFact");
+        } catch (error) {
+          self.errorMessage = "error getting facts...";
+        } finally {
+          self.loading = false;
+        }
+      },
+      async getChuiFact() {
+        var self = this;
+        self.loading = true;
+        try {
+          self.zukoFacts = await self.getAnimalFacts("/AnimalFact/GetChuiFact");
+        } catch (error) {
+          self.errorMessage = "error getting facts...";
+        } finally {
+          self.loading = false;
+        }
+      },
+    },
+  }).mount("#app");
 </script>
